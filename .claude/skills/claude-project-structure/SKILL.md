@@ -1,6 +1,6 @@
 ---
 name: claude-project-structure
-description: "Set up and maintain a multi-session project's Claude-facing structure: a one-line CLAUDE.md pointer, logs/ (dated work log), memories/ (project decisions and state), notes/ (subject documentation). Use when starting a new multi-session project, when asked to set up project docs, a project knowledgebase, persistent context, contextual persistence, session continuity, or a resumable project, when asked to continue from here, and whenever working inside a directory that already has this logs/memories/notes layout."
+description: "Set up and maintain a multi-session project's Claude-facing structure: a one-line CLAUDE.md pointer template, logs/ (dated work log), memories/ (project decisions and state), notes/ (subject documentation). Use when starting a new multi-session project, when asked to set up project docs, a project knowledgebase, persistent context, contextual persistence, session continuity, or a resumable project, when asked to continue from here, and whenever working inside a directory that already has this logs/memories/notes layout."
 ---
 
 # Rules
@@ -16,7 +16,7 @@ description: "Set up and maintain a multi-session project's Claude-facing struct
 
 ```
 ./           project root
-./CLAUDE.md  one line, pointing at this skill
+./CLAUDE.md  one line, pointing at this skill. user can add to this.
 ./logs/      dated work logs, MM-DD-YYYY.md
 ./memories/  project decisions and state, one fact per file, plus MEMORY.md
 ./notes/     subject documentation, one file per subject
@@ -81,12 +81,12 @@ with [[their-name]]. Cite the work it came out of as logs/MM-DD-YYYY.md.>
 - Audience is both a human looking for documentation and a later session recalling something already researched or learned.
 - Cite the `logs/MM-DD-YYYY.md` entries the note's content came out of.
 
-# Gotchas
+# Notes
 
 - `logs/` uses MM-DD-YYYY, not ISO. It sorts wrong under `ls`. Find today's file by constructing its name, not by position in a listing.
 - This layout has no changelog index. Current project state lives in `memories/`, history in `logs/`.
 - A memory or note referencing a log file is the only sanctioned way back into `logs/`. Write those references when creating the memory or note, or that day's work becomes unreachable.
-- `CLAUDE.md` stays at one line. Behavior rules belong in this skill, not in the project's CLAUDE.md.
+- `CLAUDE.md` starts at one line. The user can modify as they please.
 - `memories/` is project-scoped. Anything about the user rather than the project belongs in Claude's own memory directory, not here.
 
 # Example
